@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import './App.css';
+import Diary from './pages/Diary';
+import New from './pages/New';
+import Home from './pages/Home';
+import Notfound from './pages/Notfound';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const nav = useNavigate();
+  const onClickEvent = () => {
+    nav('/new');
+  };
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* Routes 밖에 배치된 요소들은 모든 페이지에 공통적으로 보여진다.
+        공통적으로 보여지는 요소가 아니면 Routes 안에 배치되어야한다. */}
+        <Link to={'/'}>Home</Link>
+        <Link to={'/new'}>New</Link>
+        <Link to={'/diary'}>Diary</Link>
+        <button onClick={onClickEvent}>new 페이지를 이벤트로 이동</button>
+        <Routes>
+          {/* Routes 안에는 Route만 들어갈 수 있음. 새로고침 */}
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<New />} />
+          <Route path="/diary" element={<Diary />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
