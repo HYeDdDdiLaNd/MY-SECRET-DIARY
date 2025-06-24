@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'SeoulNamsanB';
+  font-weight: 700;
+  font-display: swap;
+  src: local('SeoulNamsanB'), url(/public/fonts/SeoulNamsanB.ttf);
+}
+
+@font-face {
+  font-family: 'SeoulNamsanL';
+  font-weight: 500;
+  font-display: swap;
+  src: local('SeoulNamsanL'), url(/public/fonts/SeoulNamsanL.ttf);
+}
+
+@font-face {
+  font-family: 'SeoulNamsanM';
+  font-weight: 400;
+  font-display: swap;
+  src: local('SeoulNamsanM'), url(/public/fonts/SeoulNamsanM.ttf);
+}
+
+body {
+  font-family: 'SeoulNamsanM';
+}
