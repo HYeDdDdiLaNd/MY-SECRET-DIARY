@@ -5,12 +5,7 @@ import New from './pages/New';
 import Home from './pages/Home';
 import Notfound from './pages/Notfound';
 
-import emotion1 from './assets/emotion1.png';
-import emotion2 from './assets/emotion2.png';
-import emotion3 from './assets/emotion3.png';
-import emotion4 from './assets/emotion4.png';
-import emotion5 from './assets/emotion5.png';
-
+import getEmotionImage from './util/get-emotion-image';
 function App() {
   const nav = useNavigate();
   const onClickEvent = () => {
@@ -19,19 +14,12 @@ function App() {
   return (
     <>
       <div>
-        <img src={'/emotion1.png'} alt="" />
-        <img src={'/emotion2.png'} alt="" />
-        <img src={'/emotion3.png'} alt="" />
-        <img src={'/emotion4.png'} alt="" />
-        <img src={'/emotion5.png'} alt="" />
-      </div>
-      <div>
         {/* assets 폴더 내 위치하면 빌드 시 최적화 됨.  브라우저 메모리에 캐싱됨. 단 소수의 이미지만 assets에 개수가 많은 경우 public 폴더 사용*/}
-        <img src={emotion1} alt="" />
-        <img src={emotion2} alt="" />
-        <img src={emotion3} alt="" />
-        <img src={emotion4} alt="" />
-        <img src={emotion5} alt="" />
+        <img src={getEmotionImage(1)} alt="" />
+        <img src={getEmotionImage(2)} alt="" />
+        <img src={getEmotionImage(3)} alt="" />
+        <img src={getEmotionImage(4)} alt="" />
+        <img src={getEmotionImage(5)} alt="" />
       </div>
       <div>
         {/* Routes 밖에 배치된 요소들은 모든 페이지에 공통적으로 보여진다.
