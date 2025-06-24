@@ -23,7 +23,8 @@ function App() {
           {/* Routes 안에는 Route만 들어갈 수 있음. 새로고침 */}
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<New />} />
-          <Route path="/diary" element={<Diary />} />
+          <Route path="/diary/:id" element={<Diary />} />
+          {/* url parameter */}
           <Route path="*" element={<Notfound />} />
         </Routes>
       </div>
