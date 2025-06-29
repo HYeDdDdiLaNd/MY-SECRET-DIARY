@@ -1,0 +1,22 @@
+.button {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.button_default {
+  color: #333;
+  background: #eee;
+}
+
+.button_remove {
+  color: #fff;
+  background: rgb(255, 151, 151);
+}
+
+.button_update {
+  color: #fff;
+  background: rgb(119, 187, 255);
+}
