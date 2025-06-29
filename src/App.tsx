@@ -1,5 +1,5 @@
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Diary from './pages/Diary';
 import New from './pages/New';
 import Home from './pages/Home';
@@ -12,7 +12,7 @@ function App() {
     nav('/new');
   };
   return (
-    <>
+    <div className="wrapper">
       <div>
         {/* assets 폴더 내 위치하면 빌드 시 최적화 됨.  브라우저 메모리에 캐싱됨. 단 소수의 이미지만 assets에 개수가 많은 경우 public 폴더 사용*/}
         <img src={getEmotionImage(1)} alt="" />
@@ -37,7 +37,7 @@ function App() {
           <Route path="*" element={<Notfound />} />
         </Routes>
       </div>
-    </>
+    </div>
   );
 }
 

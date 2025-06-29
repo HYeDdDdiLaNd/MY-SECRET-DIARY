@@ -1,0 +1,15 @@
+#root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 520px;
+  height: 100vh;
+  max-height: 100%;
+  background-color: #fff;
+  box-shadow: #e1e1e1c2 0 2px 20px 0;
+}

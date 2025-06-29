@@ -1,0 +1,7 @@
+// global.scss
+@import './normalize'; // 브라우저 스타일 초기화
+@import './reset'; // 브라우저 스타일 초기화
+@import './fonts'; // 웹폰트 정의
+@import './variables'; // 색상, 폰트, 사이즈 등의 변수
+@import './base'; // 기본 body, html 스타일 등
+@import './mixins'; // 반복되는 스타일 묶음
