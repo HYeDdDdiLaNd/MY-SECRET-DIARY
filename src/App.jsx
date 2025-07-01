@@ -80,30 +80,6 @@ function App() {
 
   return (
     <div className="wrapper">
-      <button
-        type="button"
-        onClick={() => {
-          onCreatedDiary();
-        }}
-      >
-        일기 추가
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          onUpdateDiary();
-        }}
-      >
-        일기 수정
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          onDeleteDiary(1);
-        }}
-      >
-        일기 삭제
-      </button>
       <div>
         {/* Routes 밖에 배치된 요소들은 모든 페이지에 공통적으로 보여진다.
         공통적으로 보여지는 요소가 아니면 Routes 안에 배치되어야한다. */}
