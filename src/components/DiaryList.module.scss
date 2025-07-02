@@ -1,0 +1,18 @@
+.topArea {
+  display: flex;
+  gap: 6px;
+  padding: 0 20px;
+  margin: 20px 0 30px 0;
+}
+
+select {
+  padding: 6px 10px;
+  background: #eee;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
+.write {
+  flex: 1 0 0;
+}

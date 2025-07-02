@@ -16,9 +16,29 @@ const mockData = [
   },
   {
     id: 1,
-    date: new Date().getTime(),
+    date: new Date(2025, 6, 30).getTime(),
     emotionId: 2,
     content: '런던 베이글 마싯슴2',
+  },
+  {
+    id: 2,
+    date: new Date(2025, 5, 30).getTime(),
+    emotionId: 5,
+    content: '런던 베이글',
+  },
+  {
+    id: 3,
+    date: new Date(2025, 4, 2).getTime(),
+    emotionId: 3,
+    content:
+      '런던 베이글 마싯슴2런던 베이글 마싯슴2런던 베이글 마싯슴2런던 베이글 마싯슴2',
+  },
+  {
+    id: 4,
+    date: new Date(2025, 1, 2).getTime(),
+    emotionId: 4,
+    content:
+      '런던 베이글 마싯슴2런던 베이글 마싯슴2런던 베이글 마싯슴2런던 베이글 마싯슴2',
   },
 ];
 
@@ -37,11 +57,11 @@ function reducer(state, action) {
   }
 }
 
-const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
-  const diaryId = useRef(2);
+  const diaryId = useRef(5);
   const [state, dispatch] = useReducer(reducer, mockData);
 
   //새로운 일기 추가

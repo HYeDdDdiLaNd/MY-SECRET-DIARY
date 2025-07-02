@@ -1,0 +1,82 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+li {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 130px 1fr 80px;
+  gap: 10px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+li + li {
+  border-top: 1px solid #ddd;
+}
+
+.imgArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 90px;
+  background: #eee;
+  border-radius: 10px;
+}
+
+.imgArea.emotion_1 {
+  background: #64c965;
+}
+
+.imgArea.emotion_2 {
+  background: #9dd772;
+}
+
+.imgArea.emotion_3 {
+  background: #fece15;
+}
+
+.imgArea.emotion_4 {
+  background: #fd8446;
+}
+
+.imgArea.emotion_5 {
+  background: #fd565f;
+}
+
+.imgArea img {
+  width: 50%;
+}
+
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 12px 0;
+}
+
+.content {
+  max-height: 36px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 16px;
+}
+
+.createdDate {
+  font-size: 14px;
+}
+
+.btnArea button {
+  height: 50px;
+}
