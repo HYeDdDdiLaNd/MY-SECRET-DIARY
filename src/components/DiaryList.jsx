@@ -2,26 +2,29 @@ import { useNavigate } from 'react-router-dom';
 import styles from './DiaryList.module.scss';
 import Button from '../components/common/Button';
 import DiaryContent from '../components/DiaryContent';
+import { useState } from 'react';
 
 const DiaryList = ({ filteredData }) => {
   const nav = useNavigate();
+  const [sort, setSort] = useState('latest');
 
-  const onChangeSorted = (e) => {
-    if (e.target.value === 'latest') {
-      filteredData = filteredData.toSorted(
-        (a, b) => new Date(b.date) - new Date(a.date)
-      );
-    } else if (e.target.value === 'oldest') {
-      filteredData = filteredData.toSorted(
-        (a, b) => new Date(a.date) - new Date(b.date)
-      );
-    }
+  const onChangeSort = (e) => {
+    setSort(e.target.value);
   };
+
+  const getSortedData = () => {
+    return filteredData.toSorted((a, b) => {
+      if (sort === 'oldest') return a.date - b.date;
+      else return b.date - a.date;
+    });
+  };
+
+  const sortedData = getSortedData();
 
   return (
     <div>
       <div className={`${styles.topArea}`}>
-        <select onChange={onChangeSorted}>
+        <select onChange={onChangeSort} value={sort}>
           <option value={'latest'}>최신순</option>
           <option value={'oldest'}>오래된 순</option>
         </select>
@@ -33,7 +36,7 @@ const DiaryList = ({ filteredData }) => {
         ></Button>
       </div>
       <div className="DiaryList">
-        <DiaryContent data={filteredData}></DiaryContent>
+        <DiaryContent data={sortedData}></DiaryContent>
       </div>
     </div>
   );
