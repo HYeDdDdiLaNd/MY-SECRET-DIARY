@@ -65,14 +65,14 @@ function App() {
   const [state, dispatch] = useReducer(reducer, mockData);
 
   //새로운 일기 추가
-  const onCreatedDiary = (id, date, emotionId, content) => {
+  const onCreatedDiary = (date, emotionId, content) => {
     dispatch({
       type: 'CREATED',
       data: {
         id: diaryId.current++,
-        date: new Date().getTime(),
-        emotionId: 3,
-        content: '새롭게 추가한 일기',
+        date: new Date(date).getTime(),
+        emotionId: emotionId,
+        content: content,
       },
     });
   };
@@ -82,10 +82,10 @@ function App() {
     dispatch({
       type: 'UPDATE',
       data: {
-        id: 1,
-        date: new Date().getTime(),
-        emotionId: 5,
-        content: '수정함',
+        id: id,
+        date: new Date(date).getTime(),
+        emotionId: emotionId,
+        content: 'content',
       },
     });
   };
@@ -109,7 +109,7 @@ function App() {
         <button onClick={onClickEvent}>new 페이지를 이벤트로 이동</button> */}
         <DiaryStateContext.Provider value={state}>
           <DiaryDispatchContext.Provider
-            value={(onCreatedDiary, onUpdateDiary, onDeleteDiary)}
+            value={{ onCreatedDiary, onUpdateDiary, onDeleteDiary }}
           >
             <Routes>
               {/* Routes 안에는 Route만 들어갈 수 있음. 새로고침 */}

@@ -5,7 +5,7 @@ import getEmotionImage from '../util/get-emotion-image';
 const DiaryContent = ({ data }) => {
   const nav = useNavigate();
   return (
-    <ul>
+    <ul className={`${styles.diaryContent}`}>
       {data.map((item) => (
         <li key={item.id}>
           <div

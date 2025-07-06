@@ -2,7 +2,7 @@ import Header from '../components/common/Header';
 import Button from '../components/common/Button';
 import DiaryList from '../components/DiaryList';
 import { useState } from 'react';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { DiaryStateContext } from './../App.jsx';
 
 const Home = () => {

@@ -1,0 +1,42 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 16px;
+  margin: 20px 0 0 0;
+}
+
+.editor section h4 {
+  margin: 0 0 24px 0;
+}
+
+.editDate input {
+  padding: 12px;
+  background: #eee;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
+.editEmotion ul {
+  display: flex;
+  gap: 12px;
+}
+
+.editDiary textarea {
+  width: 100%;
+  min-height: 250px;
+  max-height: 250px;
+  padding: 12px;
+  overflow-y: auto;
+  background: #eee;
+  border: #aaa;
+  outline: none;
+  border-radius: 6px;
+  resize: none;
+}
+
+.btnArea {
+  display: flex;
+  justify-content: space-between;
+}

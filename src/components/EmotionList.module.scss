@@ -1,0 +1,27 @@
+.emotionList {
+  flex: 1 0 0;
+}
+
+.emotionList.active .emotionWrap {
+  padding: 7px;
+  border: 2px solid #aaa;
+}
+
+.emotionWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.emotionWrap img {
+  width: 50px;
+  height: 50px;
+}
+
+.emotionWrap span {
+  font-size: 14px;
+}

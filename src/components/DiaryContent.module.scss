@@ -1,11 +1,11 @@
-ul {
+.diaryContent {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 0 16px;
 }
 
-li {
+.diaryContent > li {
   display: grid;
   align-items: center;
   grid-template-columns: 130px 1fr 80px;
@@ -14,7 +14,7 @@ li {
   cursor: pointer;
 }
 
-li + li {
+.diaryContent > li + li {
   border-top: 1px solid #ddd;
 }
 
