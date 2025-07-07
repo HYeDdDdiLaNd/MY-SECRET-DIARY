@@ -1,13 +1,10 @@
 import styles from './EmotionList.module.scss';
 
-const EmotionList = ({ id, src, text, onclick, isActive }) => {
+const EmotionList = ({ id, src, text, isActive, onClick }) => {
   return (
     <li
       className={`${styles.emotionList} ${isActive ? styles.active : ''}`}
-      id={id}
-      onClick={() => {
-        onclick(id);
-      }}
+      onClick={onClick}
     >
       <div className={`${styles.emotionWrap}`}>
         <img src={src} alt={text} />

@@ -48,16 +48,9 @@ const Editor = ({ onSubmit }) => {
     });
   };
 
-  const onClickEmotionList = (id) => {
-    setInput({
-      ...input,
-      emotionId: id,
-    });
-  };
-
   const onSubmitClickBtn = () => {
     onSubmit(input);
-    nav(-1);
+    nav(-1, { replace: true });
   };
 
   return (
@@ -78,10 +71,16 @@ const Editor = ({ onSubmit }) => {
             <EmotionList
               key={item.id}
               {...item}
-              onclick={onClickEmotionList}
-              isActive={
-                input.emotionId && item.id === input.emotionId ? true : false
+              onClick={() =>
+                /* 자식 컴포넌트에 이벤트를 발생시키면 해당 컴포넌트 내에서도 props로 이벤트를 받아야 이벤트 처리가 된다. */
+                setInputValue({
+                  target: {
+                    name: 'emotionId',
+                    value: item.id,
+                  },
+                })
               }
+              isActive={item.id === input.emotionId}
             />
           ))}
         </ul>
