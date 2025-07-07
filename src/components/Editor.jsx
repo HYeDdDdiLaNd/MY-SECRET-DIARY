@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Editor.module.scss';
 import Button from '../components/common/Button';
@@ -21,23 +21,34 @@ const emotionDateList = [
   { id: 5, src: getEmotionImage(5), text: '최악이야' },
 ];
 
-const Editor = ({ onSubmit }) => {
+const defaultTodaySet = (defaultDate) => {
+  const year = defaultDate.getFullYear();
+  const month = String(defaultDate.getMonth() + 1).padStart(2, '0');
+  const date = String(defaultDate.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${date}`;
+};
+
+const Editor = ({ initData, onSubmit }) => {
   const nav = useNavigate();
 
-  const defaultTodaySet = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const date = String(today.getDate()).padStart(2, '0');
-
-    return `${year}-${month}-${date}`;
-  };
-
   const [input, setInput] = useState({
-    date: defaultTodaySet(),
+    //일기를 작성할 때의 값 저장되는 곳
+    date: defaultTodaySet(new Date()),
     emotionId: null,
     content: '',
   });
+
+  useEffect(() => {
+    if (initData) {
+      //일기 수정하기인지 || 일기 작성하기인지 구분
+      setInput({
+        date: defaultTodaySet(new Date(initData.date)),
+        emotionId: initData.emotionId,
+        content: initData.content,
+      });
+    }
+  }, [initData]);
 
   const setInputValue = (e) => {
     const name = e.target.name;

@@ -71,8 +71,8 @@ function App() {
       data: {
         id: diaryId.current++,
         date: new Date(date).getTime(),
-        emotionId: emotionId,
-        content: content,
+        emotionId,
+        content,
       },
     });
   };
@@ -82,10 +82,10 @@ function App() {
     dispatch({
       type: 'UPDATE',
       data: {
-        id: id,
+        id,
         date: new Date(date).getTime(),
-        emotionId: emotionId,
-        content: 'content',
+        emotionId,
+        content,
       },
     });
   };
