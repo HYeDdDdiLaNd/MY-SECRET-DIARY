@@ -3,31 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Editor.module.scss';
 import Button from '../components/common/Button';
 import EmotionList from './EmotionList';
-import getEmotionImage from '../util/get-emotion-image';
-
-const emotionDateList = [
-  {
-    id: 1,
-    src: getEmotionImage(1),
-    text: '아주 좋아',
-  },
-  { id: 2, src: getEmotionImage(2), text: '좋아' },
-  { id: 3, src: getEmotionImage(3), text: '보통이야' },
-  {
-    id: 4,
-    src: getEmotionImage(4),
-    text: '그저 그래',
-  },
-  { id: 5, src: getEmotionImage(5), text: '최악이야' },
-];
-
-const defaultTodaySet = (defaultDate) => {
-  const year = defaultDate.getFullYear();
-  const month = String(defaultDate.getMonth() + 1).padStart(2, '0');
-  const date = String(defaultDate.getDate()).padStart(2, '0');
-
-  return `${year}-${month}-${date}`;
-};
+import { emotionDateList } from '../util/get-emotion-data';
+import defaultTodaySet from '../util/get-date-set';
 
 const Editor = ({ initData, onSubmit }) => {
   const nav = useNavigate();

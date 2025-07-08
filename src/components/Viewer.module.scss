@@ -1,0 +1,64 @@
+.viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  height: calc(100vh - 48px);
+  padding: 60px 16px;
+}
+
+.viewer section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.viewer h4 {
+  font-size: 20px;
+}
+
+.emotionArea,
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.emotionArea .imgWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.emotionArea .imgWrap_1 {
+  background: #64c965;
+}
+
+.emotionArea .imgWrap_2 {
+  background: #9dd772;
+}
+
+.emotionArea .imgWrap_3 {
+  background: #fece15;
+}
+
+.emotionArea .imgWrap_4 {
+  background: #fd8446;
+}
+
+.emotionArea .imgWrap_5 {
+  background: #fd565f;
+}
+
+.diaryContent {
+  width: 100%;
+  min-height: 180px;
+  padding: 16px;
+  background: #eee;
+  border-radius: 8px;
+}
