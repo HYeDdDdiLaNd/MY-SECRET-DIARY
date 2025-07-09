@@ -64,6 +64,14 @@ function App() {
   const diaryId = useRef(5);
   const [state, dispatch] = useReducer(reducer, mockData);
 
+  localStorage.setItem('test', 'hello'); //반대로 session도 있는데, 탭이 닫히면 스토리지 내역이 지워짐.
+  localStorage.setItem('user', JSON.stringify({ name: '정혜진' })); 사용자가 직접 삭제하기 전까지 남아있음.
+
+  console.log(localStorage.getItem('user')); // 문자열 형태로 가져오기 때문에
+  console.log(JSON.parse(localStorage.getItem('user'))); //parse를 쓰는데 꼭 undefined가 아닐때만 사용해야한다.
+
+  localStorage.removeItem('user'); //삭제하는 방법 1 혹은 웹브라우저 > 개발자도구 > 어플리케이션에서 직접 삭제
+
   //새로운 일기 추가
   const onCreatedDiary = (date, emotionId, content) => {
     dispatch({
