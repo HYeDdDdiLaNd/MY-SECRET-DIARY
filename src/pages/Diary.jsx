@@ -3,9 +3,11 @@ import Button from '../components/common/Button';
 import Header from '../components/common/Header';
 import Viewer from '../components/Viewer';
 import { findData } from '../hooks/useData';
+import { setPageTitle } from '../hooks/useTitle';
 import defaultTodaySet from '../util/get-date-set';
 
 const Diary = () => {
+  setPageTitle('작성한 일기');
   const params = useParams(); //url parameter : ~/product/1 => /뒤에 아이템의 id를 명시 받아오기
   const nav = useNavigate();
 

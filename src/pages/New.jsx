@@ -1,11 +1,13 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Header from '../components/common/Header';
 import Button from '../components/common/Button';
 import Editor from '../components/Editor';
 import { DiaryDispatchContext } from './../App.jsx';
+import { setPageTitle } from '../hooks/useTitle';
 
 const New = () => {
+  setPageTitle('새 일기 쓰기');
   // const [params] = useSearchParams(
   //   {}
   // ); /* query string: /new?value=good => ? 뒤에 변수명(value)과 값(=good)을 명시 */

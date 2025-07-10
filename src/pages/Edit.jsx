@@ -5,8 +5,10 @@ import Header from '../components/common/Header';
 import Editor from '../components/Editor';
 import { DiaryDispatchContext } from '../App';
 import { findData } from '../hooks/useData';
+import { setPageTitle } from '../hooks/useTitle';
 
 const Edit = () => {
+  setPageTitle('일기 수정하기');
   const params = useParams(); //url parameter : ~/product/1 => /뒤에 아이템의 id를 명시 받아오기
   const nav = useNavigate();
   const { onUpdateDiary, onDeleteDiary } = useContext(DiaryDispatchContext);
